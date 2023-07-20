@@ -11,6 +11,7 @@ class Category(models.Model):
     class Meta:
        verbose_name_plural='categories'
 
+#string representation of field
     def __str__(self):
         return self.category_name
 
@@ -32,6 +33,6 @@ class Blog(models.Model):
     created_at=models.DateTimeField(auto_now_add=True)
     updated_at=models.DateTimeField(auto_now=True)
 
-
+#string representation of field
     def __str__(self):
         return self.title
