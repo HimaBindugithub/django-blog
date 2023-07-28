@@ -36,3 +36,17 @@ class Blog(models.Model):
 #string representation of field
     def __str__(self):
         return self.title
+    
+
+
+class Comment(models.Model):
+    user=models.ForeignKey(User,on_delete=models.CASCADE)    
+    blog=models.ForeignKey(Blog,on_delete=models.CASCADE) #if the blog is deleted then comment should also be deleted
+    comment=models.TextField(max_length=250)
+    created_at=models.DateTimeField(auto_now_add=True)
+    updated_at=models.DateTimeField(auto_now=True)
+
+
+    #string representation of comment model
+    def __str__(self):
+        return self.comment
